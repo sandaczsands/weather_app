@@ -1,6 +1,23 @@
+:root{
+    --base-color: #aac418;
+    --secondary-color: #778a0f;
+    --box-color: #d8ee5e;
+    --text-color: #3e4902;
+    --base-shadow: #727e2d;
+    --base-highlight: #b9d610;
+}
+
+.darkmode{
+    --base-color: #454e0f ;
+    --secondary-color: #475209;
+    --box-color: #252b05;
+    --text-color: #c1d83c;
+    --base-shadow: #292e10;
+    --base-highlight: #859917;
+}
 
 body{
-    background: #758610;
+    background: var(--base-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -11,20 +28,20 @@ body{
 }
 
 #weather-container{
-    background: #b4cc2c;
+    background: var(--box-color);
     padding: 20px;
     border-radius: 15px;
     max-width: 400px;
     text-align: center;
     border-radius: 15px;
-    box-shadow: 0 8px 32px 0 #727e2d;
+    box-shadow: 0 8px 32px 0 var(--base-shadow);
     backdrop-filter: blur(10px);
-    border: 1px solid  #727e2d;
+    border: 1px solid var(--base-shadow);
 }
 
 h2, label, p{
     margin: 8px 0;
-    color: #fff;
+    color: var(--text-color);
 }
 
 input {
@@ -32,13 +49,15 @@ input {
     padding: 8px;
     box-sizing: border-box;
     border-radius: 10px;
-    border: 1px solid #d0ee24;
+    border: 1px solid var(--base-highlight);
     margin-top: 20px;
+    color: var(--text-color);
+    background: var(--box-color);
 }
 
 button{
-    background: #778a0f;
-    color: #fff;
+    background: var(--base-color);
+    color: var(--text-color);
     padding: 10px;
     border: none;
     border-radius: 10px;
@@ -49,7 +68,7 @@ button{
 }
 
 button:hover{
-    background: #d0ee24;
+    background: var(--base-highlight);
 }
 
 #temp-div p{
@@ -84,7 +103,7 @@ button:hover{
     flex-direction : column;
     align-items: center;
     margin-right: 10px;
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 .hourly-item img{
@@ -94,6 +113,41 @@ button:hover{
 }
 
 #hourly-heading{
-    color: #ffffff;
+    color: var(--text-color);
     margin-top: 10px;
+}
+
+#theme-switch{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--box-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#theme-switch svg{
+    fill: var(--base-color);
+}
+
+#theme-switch svg:hover{
+    fill: var(--base-highlight);
+}
+
+#theme-switch svg:last-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child{
+    display: block;
 }
