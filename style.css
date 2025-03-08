@@ -89,6 +89,8 @@ button:hover{
 }
 
 #hourly-forecast{
+    scrollbar-color: var(--base-color) var(--box-color);
+    scrollbar-width: thin;
     overflow-x: auto;
     white-space: nowrap;
     justify-content: space-between;
